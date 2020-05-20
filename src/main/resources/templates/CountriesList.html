@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Coronavirus Tracker</title>
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div th:object="${globalData}" class="jumbotron" style="text-align:center;background-color:#80ced6;font-size: 120%;font-weight: bold">
+  <p>Confirmed Cases: <span th:text="*{confirmed}"></span></p>
+  <p>Active Cases: <span th:text="*{active}"></span></p>
+  <p>Recovered:<span th:text="*{recovered}"></span></p>
+  <p>Death:<span th:text="*{deaths}"></span></p>
+</div>
+<table class="table table-md table-bordered">
+	<tr>
+		<th>Country Name</th>
+		<th>Confirmed Cases</th>
+		
+	</tr>	
+	<tr th:each="globalData : ${GlobalList}">
+		<td><a th:text="${globalData.location}" th:href="@{/CountryData/{id}(id=${globalData.location})}">View Details</a></td>
+		<td th:text="${globalData.confirmed}"></td>
+	</tr>
+</table>
+
+</body>
+</html>

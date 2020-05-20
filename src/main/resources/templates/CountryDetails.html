@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Coronavirus Tracker</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+</br>
+</br>
+<table class="table table-md table-bordered">
+	<tr>
+		<th>Country Name:</th>
+		<td th:text="${countryData.location}"></td>		
+	</tr>
+	<tr>
+		<th>Confirmed Cases</th>
+		<td th:text="${countryData.confirmed}"></td>
+	</tr>
+	<tr>
+		<th>Active cases</th>
+		<td th:text="${countryData.active}"></td>
+	</tr>
+	<tr>
+		<th>Recovered</th>
+		<td th:text="${countryData.recovered}"></td>
+	</tr>
+	<tr>
+		<th>Deaths</th>
+		<td th:text="${countryData.deaths}"></td>
+	</tr>		
+	<tr>
+		<td colspan="2"><a th:href="@{/}">Back to List</a></td>
+	</tr>		
+</table>
+
+</body>
+</html>
